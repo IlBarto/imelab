@@ -1,46 +1,132 @@
 <?php
+function imelab_setup() {
+    /*
+     * Make theme available for translation.
+     * Translations can be filed in the /languages/ directory.
+     * If you're building a theme based on tema prova, use a find and replace
+     * to change 'tema-prova' to the name of your theme in all the template files.
+     */
+    load_theme_textdomain( 'imelab', get_template_directory() . '/languages' );
+
+
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support( 'automatic-feed-links' );
+
+
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support( 'title-tag' );
+
+
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     */
+    add_theme_support( 'post-thumbnails' );
+
+
+    // Set the default content width.
+    $GLOBALS['content_width'] = 500;
+
+
+    register_nav_menus( array(
+        'top-menu' => esc_html__( 'Top Bar', 'imelab' ),
+    ) );
+
+
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ) );
+
+
+    /*
+     * Enable support for Post Formats.
+     *
+     * See: https://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support( 'post-formats', array(
+        'aside',
+        'image',
+        'video',
+        'quote',
+        'link',
+        'gallery',
+        'audio',
+    ) );
+
+
+    // Add theme support for selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
+}
+add_action( 'after_setup_theme', 'imelab_setup' );
+
+
+function imelab_scripts(){
+
+	//carica javascript per i thread dei commenti se ablitati
+    if ( is_singular() && get_option('thread_comments') && comments_open()) {
+        wp_enqueue_script('comment-reply');
+    }
+
+}
+add_action('wp_enqueue_scripts','imelab_scripts');
+
+?>
+
+
+
+
+<?php
 //
 // imposta la larghezza del contenuto per il tema
-if (!isset ($content_width))
-	$content_width = 500;
+//if (!isset ($content_width))
+//	$content_width = 500;
 
 //imposta il tema
 add_action ('after_setup_theme', 'simpleblog_themesetup');
 function simpleblog_themesetup(){
 	//link automatici dei feed
-
-
-	add_theme_support('automatic-feed-links');
+	//add_theme_support('automatic-feed-links');
 
 	//aggiunge la funzione di navigazione nei menu all'hook "init"
-	add_action('init', 'simpleblog_register_menus');
+//	add_action('init', 'simpleblog_register_menus');
 
 	//aggiunge la funzione della sidebar all'hook "widgets_init"
-
 	add_action('widgets_init', 'simpleblog_register_sidebars');
+
 	//carica file javascript sull'hook "wp_enqueue_scripts"
-	add_action('wp_enqueue_scripts','simpleblog_load_scripts');
+//	add_action('wp_enqueue_scripts','imelab_load_scripts');
 }
 
 //menu registrato
-
-function simpleblog_register_menus(){
-	register_nav_menus(
-		array( 
-				'top-navigator' =>'Top navigation',
-				'bottom-navigation' => 'Bottom navigation',
-				'test-menu'=>'Tessttt Mennnu'
-
-			)
-		);
-
-}
+//function simpleblog_register_menus(){
+//	register_nav_menus(
+//		array(
+//				'top-navigator' =>'Top navigation',
+//				'bottom-navigation' => 'Bottom navigation',
+//				'test-menu'=>'Tessttt Mennnu'
+//
+//			)
+//		);
+//
+//}
 
 //registra le aree dei widget
-
 function simpleblog_register_sidebars(){
 	//area dei widget nella colonna di destra
-
 	register_sidebar(array(
 			'name'=> 'Right column',
 			'id' =>'right-column',
@@ -48,30 +134,31 @@ function simpleblog_register_sidebars(){
 			'after_widget' => '</li>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
-
-
 		));
-
-
-}
-//carica javascript
-function simpleblog_load_scripts(){
-//carica javascript per i thread dei commenti se ablitati
-
-	if ( is_singular() &&get_option('thread_comments') && comments_open()) {
-		wp_enqueue_script('comment-reply');
-	}
-
 }
 
-function hellomate(){
-	echo 'Ehi, come va?';
-}
+//function imelab_load_scripts(){
+////carica javascript per i thread dei commenti se ablitati
+//
+//	if ( is_singular() && get_option('thread_comments') && comments_open()) {
+//		wp_enqueue_script('comment-reply');
+//	}
+//
+//}
 
-function Promotion ($content) { if (!is_feed()&& !is_home()) { $content.= '<div class="promotion">'; $content.= '<h4> Per non perdere un colpo! </h4>'; $content.= '<p> promozioni</p>'; $content.= '</div>'; } return $content;
-}
 
+//function Promotion ($content) {
+//    if (!is_feed()&& !is_home()) {
+//        $content.= '<div class="promotion">';
+//        $content.= '<h4> Per non perdere un colpo! </h4>';
+//        $content.= '<p> promozioni</p>';
+//        $content.= '</div>';
+//    }
+//
+//    return $content;
+//}
 //add_filter('the_content', 'Promotion');
+
 
 add_action('widget_init','smashing_register_sidebars');
 function smashing_register_sidebars(){
@@ -86,6 +173,7 @@ add_action ('after_setup_theme', 'simpleblog_theme_setup');
 	add_image_size('top-feature', 500,255);
 }
 register_nav_menus (array('test-menu2' => 'test mMenu'));
+
 
 //aggiungere il support per gli header personalizzati
 $defaults= array(
@@ -112,7 +200,7 @@ function simpleblog_theme_settings($wp_customize){
 $wp_customize-> add_section(
 	'simpleblog_footer', array(
 		'title'=> 'Footer Details',
-		'description'=>"Custmoize your site footer",
+		'description'=>"Customize your site footer",
 
 		)
 	);
@@ -141,36 +229,14 @@ $wp_customize-> add_control('simpleblog_footer_enable', array(
 			'label'=> 'Enable or disable copyright',
 			'type'=>'checkbox',
 			'section'=>'simpleblog_footer',
-
-
-
 			)
-
-
 	);
-
 }
 
 add_action('customize_register', 'simpleblog_theme_settings', 11);
 
 
-
-// funzione che controlla la pagina caricata e se è nella lista del menu inserisce lo stile
-function imelab_is_active_page($title){
-$attiva =0;
-switch ($title){
-	case About:
-		$attiva=1;
-echo $title;
-		return $attiva;
-	break;
-	
-}
-}
-
 //filtro per le variabili passate tramite get su URL
-
-
 function add_query_vars_filter($vars){
 
 $vars[]="serial";
@@ -178,15 +244,4 @@ return $vars;
 
 }
 add_filter ('query_vars','add_query_vars_filter');
-
-//funzione chiamata nel menu nav per aggiungere l'effetto nel menu corrispondente alla pagina in cui si è
-
-function nav_pagina_attuale($label_menu){
-	
-	$pagina_attuale=get_the_title();
-	if ($pagina_attuale == $label_menu){
-		echo "menu_page_active";
-	}
-
-}
 ?>
