@@ -1,38 +1,6 @@
 
 <?php
-get_header();
-
-
-
-
-if(isset($_GET)){
-$seriale=0;
-$code=0;
-$version=0;
-$system=0;
-
-if(isset($_GET['serial'])){
-
-	//$_GET['serial']&&$_GET['code']&&$_GET['version']&&$_GET['system']
-	$seriale=$_GET['serial'];
-	$code=$_GET['code'];
-	$version=$_GET['version'];
-	$system=$_GET['system'];
-}
-//echo "Seriale:".$seriale.", code:".$code." version:".$version.", system:".$system;
-
-
-//print_r($_GET);
-//print_r(add_query_vars_filter($_GET));
-
-
-
-}
-
-
-
-
-?>
+get_header(); ?>
 
 <div id="main-container">
 
