@@ -11,9 +11,9 @@
 ?>
 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'imelab' ); ?>">
 	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-		<div class="icon-bar"></div>
-		<div class="icon-bar"></div>
-		<div class="icon-bar"></div>
+		<div class="icon-bar-1"></div>
+		<div class="icon-bar-2"></div>
+		<div class="icon-bar-3"></div>
 	</button>
 	
 	<?php wp_nav_menu( array(

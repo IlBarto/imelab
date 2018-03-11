@@ -81,9 +81,17 @@ function imelab_scripts(){
         wp_enqueue_script('comment-reply');
     }
 
+    if(has_nav_menu('top-menu')) {
+        wp_enqueue_script('imelab-navigation', get_theme_file_uri('/js/navigation.js'), array(), '1.0', true);
+    }
+
 }
 add_action('wp_enqueue_scripts','imelab_scripts');
 
+function imelab_javascript_detection() {
+    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action('wp_head', 'imelab_javascript_detection', 0);
 ?>
 
 
