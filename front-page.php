@@ -2,15 +2,16 @@
 <?php
 get_header(); ?>
 
-<div id="main-container">
+<h2>front-page</h2>
 
+<div id="main-container">
 	<section id="content-container">
 		<?php
 		//loop dei post 
 			while(have_posts()): the_post();
 
 			//prendi il contenuto dei single
-			get_template_part('content', 'single');
+			get_template_part('/template-parts/page/content', 'front-page');
 
 			//prendi i commenti
 			the_post_thumbnail();
@@ -21,13 +22,7 @@ get_header(); ?>
 			?>
 
 	</section> <!-- main--container--end-->
-	<?php //get_sidebar(); ?>
-
-
 </div>
 
-
-
 <?php
-get_footer();
-?>
+get_footer(); ?>

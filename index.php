@@ -1,6 +1,6 @@
 <?php
 get_header(); ?>
-
+<h2>index</h2>
 <div id="main-container">
     <section id="content-container">
         <?php

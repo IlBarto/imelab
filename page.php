@@ -1,10 +1,7 @@
 <?php
+get_header(); ?>
 
-get_header();
-
-//wp_nav_menu(array('theme_location'=> 'test-menu'));
-?>
-
+<h2>page</h2>
 <div id="main-container">
 
 	<section id="content-container">

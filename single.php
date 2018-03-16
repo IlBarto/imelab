@@ -1,10 +1,5 @@
-<?php
-
-
-?>
-
+<h2>single</h2>
 <div id="main-container">
-
 	<section id="content-container">
 	<?php 
 	
