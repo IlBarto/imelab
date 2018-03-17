@@ -36,7 +36,7 @@ function imelab_setup() {
 
     register_nav_menus( array(
         'top-menu' => esc_html__( 'Top Bar', 'imelab' ),
-        'social' => esc_html_('Social Footer', 'imelab'),
+        'social' => esc_html__('Social Footer', 'imelab'),
     ) );
 
 
