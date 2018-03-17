@@ -13,32 +13,6 @@
     </header>
 	
     <?php
-    $gallery_images = get_post_gallery_images();
-    if (!empty($gallery_images)) : ?>
-        <div id="postCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <?php
-                $first = true;
-                foreach( $gallery_images as $image_url ) { ?>
-                    <div class="carousel-item <?php $first ? 'active' : '' ?>">
-                        <img class="d-block w-100" src="<?php echo esc_url($image_url) ?>" />
-                    </div>
-                <?php
-                }
-                ?>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    <?php
-    endif;
-    
     if ( '' !== get_the_post_thumbnail() ) : ?>
         <div class="post-thumbnail">
             <?php if (!is_single()) : ?>

@@ -910,6 +910,10 @@ a:hover, a:active {
 	margin: 0 0 1.5em;
 }
 
+#page {
+	padding: 1em;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1035,7 +1039,9 @@ object {
 /*
 #Layout
 */
-
+.wrap {
+	padding: 0 2em;
+}
 /*
 ## Header
 */
@@ -1050,9 +1056,16 @@ object {
 /*
 ##Footer
 */
+footer {
+	background-color: #676a6b;
+	text-decoration: none;
+	color: #aaa;
+}
+
 .copyright h6 {
 	left: 0;
 	margin: 5px 0;
+	font-size: 0.75rem	;
 }
 
 
