@@ -13,11 +13,6 @@ get_header(); ?>
 			//prendi il contenuto dei single
 			get_template_part('/template-parts/page/content', 'front-page');
 
-			//prendi i commenti
-			the_post_thumbnail();
-			//comments_template('',true);
-
-			// fine loop
 			endwhile;
 			?>
 

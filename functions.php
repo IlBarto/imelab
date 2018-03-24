@@ -100,6 +100,14 @@ function imelab_javascript_detection() {
 }
 add_action('wp_head', 'imelab_javascript_detection', 0);
 
+function active_menu_item_class($classes, $item) {
+    if(in_array('current-menu-item', $classes)) {
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'active_menu_item_class', 10, 2);
+
 
 
 

@@ -1,29 +1,32 @@
 <h2>content</h2>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php
-        if ( is_single() ) {
-	        the_title( '<h1 class="entry-title">', '</h1>' );
-        } elseif ( is_front_page() && is_home() ) {
-	        the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-        } else {
-	        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-        }
-        ?>
-    </header>
-	
+<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
     <?php
     if ( '' !== get_the_post_thumbnail() ) : ?>
-        <div class="post-thumbnail">
-            <?php if (!is_single()) : ?>
-            <a href="<?php the_permalink(); ?>">
-            <?php endif;
-                the_post_thumbnail();
-            if (!is_single()) : ?>
-            </a>
-            <?php endif; ?>
+        <div class="post-thumbnail col-md-4">
+            <?php the_post_thumbnail(); ?>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
-<?php
-the_content(); ?>
+
+    <div class="content-wrapper col-md-8">
+        <header class="entry-header">
+            <?php
+            if ( is_single() ) {
+                echo "is_single";
+                the_title( '<h1 class="entry-title">', '</h1>' );
+            } else {
+                echo "else";
+                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            }
+            ?>
+        </header>
+
+        <?php
+        if(is_single()) :
+            the_content();
+        else :
+            the_excerpt(); ?>
+            <a class="btn btn-outline-secondary btn-lg" href="<?php echo get_permalink(); ?>"><?php esc_html_e( 'Informazioni', 'imelab' ); ?></a>
+        <?php
+        endif; ?>
+    </div>
 </article>

@@ -10,8 +10,6 @@
                         'theme_location' => 'social',
                         'menu_class'     => 'social-links-menu',
                         'depth'          => 1,
-                        'link_before'    => '<span class="screen-reader-text">',
-                        'link_after'     => '</span>',
                     ) );
                     ?>
                 </nav>
