@@ -1,10 +1,12 @@
     </div><!-- #content -->
 
     <footer class="footer panel-footer site-footer">
-        <div class="wrap">
+        <div class="wrap row">
             <?php
+            get_template_part('template-parts/footer/copyright');
+
             if(has_nav_menu('social')) : ?>
-                <nav class="social-wrap" role="navigation" aria-label="<?php _e( 'Footer Social Links Menu', 'imelab' ); ?>">
+                <nav class="social-wrap col-md-3" role="navigation" aria-label="<?php _e( 'Footer Social Links Menu', 'imelab' ); ?>">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'social',
@@ -14,7 +16,7 @@
                     ?>
                 </nav>
             <?php endif;
-            get_template_part('template-parts/footer/copyright');
+
             ?>
         </div>
     </footer>

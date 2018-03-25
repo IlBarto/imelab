@@ -3,7 +3,6 @@ get_header(); ?>
 
 <h2>page</h2>
 <div id="main-container">
-
 	<section id="content-container">
 		<?php
 		//loop dei post 
@@ -21,9 +20,6 @@ get_header(); ?>
 			?>
 
 	</section> <!-- main--container--end-->
-	<?php //get_sidebar(); ?>
-
-
 </div>
 
 <?php  get_footer(); ?>
