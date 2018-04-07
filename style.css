@@ -614,8 +614,8 @@ textarea {
 .navigation-top{
 	background: #fff;
 	border: #aaa 1px solid;
-	font-size: 13px;
-	font-size: 0.8rem;
+	font-size: 18px;
+	font-size: 1rem;
 	font-family: raleway-bold, sans-serif;
 }
 
@@ -640,10 +640,13 @@ textarea {
 	background: #fff;
 	list-style: none;
 	margin: 0;
-	padding: 0 1.5em;
+	padding: 0 1rem;
 	text-align: left;
 }
 
+.main-navigation input {
+	max-width: 75%;
+}
 /* Hide the menu on small screens when JavaScript is available.
  * It only works with JavaScript.
  */
@@ -680,25 +683,39 @@ textarea {
 	width: 24px;
 	height: 2px;
 	background-color: #000;
-	margin: 6px 0;
+	margin: 6px auto;
 	transition: .4s;
 }
 
-.main-navigation.toggled .icon-bar-1{
+.main-navigation .icon-bar-1{
 	-webkit-transform: rotate(-45deg) translate(-4px, 6px) ;
 	transform: rotate(-45deg) translate(-4px, 6px) ;
 }
 
-.main-navigation.toggled .icon-bar-2{
+.main-navigation .icon-bar-2{
 	opacity: 0;
 }
 
-.main-navigation.toggled .icon-bar-3{
+.main-navigation .icon-bar-3{
 	-webkit-transform: rotate(45deg) translate(-5px, -8px) ;
 	transform: rotate(45deg) translate(-5px, -8px) ;
 }
 
-.main-navigation.toggled ul.nav-menu {
+.main-navigation a.collapsed .icon-bar-1 {
+	-webkit-transform: rotate(0) translate(0, 0) ;
+	transform: rotate(0) translate(0, 0) ;
+}
+
+.main-navigation a.collapsed .icon-bar-2 {
+	opacity: 1;
+}
+
+.main-navigation a.collapsed .icon-bar-3 {
+	-webkit-transform: rotate(0) translate(0, 0) ;
+	transform: rotate(0) translate(0, 0) ;
+}
+
+#top-menu {
 	display: block;
 }
 
@@ -890,7 +907,7 @@ article > * {
 	display: block;
 }
 
-.hentry {
+.hentry.is-not-single {
 	border: 1px solid #ccc;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -1045,6 +1062,12 @@ object {
 .wrap {
 	padding: 0 1em;
 }
+
+.entry-title a {
+	color: #676A6B;
+}
+
+
 /*
 ## Header
 */
@@ -1062,6 +1085,10 @@ object {
 
 #top-menu li.active{
 	text-decoration: underline;
+}
+
+button.menu-toggle {
+	outline: none !important;
 }
 
 /*
@@ -1135,8 +1162,9 @@ footer .wrap > * {
 @media screen and (max-width: 48em) {
 
 	#top-menu li {
-		font-size: 20px;
-		font-size: 1.2em;
+		font-size: 22px;
+		font-size: 1.2rem;
+		letter-spacing: 2px;
 	}
 
 	#menu-social-menu > li:nth-child(odd) {
@@ -1151,12 +1179,13 @@ footer .wrap > * {
 
 @media screen and (min-width: 48em) {
 	/*Navigation*/
+	#navigationMenu {
+		display: block;
+	}
+
 	.navigation-top {
 		bottom: 0;
-		font-size: 14px;
-		font-size: 0.875rem;
 		left: 0;
-		position: absolute;
 		right: 0;
 		width: 100%;
 		z-index: 3;
@@ -1171,6 +1200,8 @@ footer .wrap > * {
 	.navigation-top nav {
 		margin-left: -1.25em;
 	}
+
+
 
 	/*Main Navigation*/
 

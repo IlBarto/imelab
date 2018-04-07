@@ -108,7 +108,25 @@ function active_menu_item_class($classes, $item) {
 }
 add_filter( 'nav_menu_css_class', 'active_menu_item_class', 10, 2);
 
+function nav_menu_custom_wrapper() {
+    $wrap  = '<ul id="%1$s" class="%2$s">';
+    $wrap .= '%3$s';
 
+    $wrap .= '<li class="menu search-form">';
+    $wrap .= get_search_form(false);
+    $wrap .= '</li></ul>';
+    return $wrap;
+}
+
+if(!is_admin()) {
+    function page_search_filter($query) {
+        if($query->is_search) {
+            $query->set('post_type', 'post');
+        }
+        return $query;
+    }
+    add_filter('pre_get_posts', 'page_search_filter');
+}
 
 
 //aggiungere il support per gli header personalizzati
