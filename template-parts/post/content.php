@@ -1,6 +1,3 @@
-<?php
-$is_single = is_single();
-?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row is-not-single'); ?>>
     <?php
     if ( '' !== get_the_post_thumbnail() ) : ?>
@@ -12,7 +9,6 @@ $is_single = is_single();
     <div class="content-wrapper col-md-8">
         <header class="entry-header">
             <?php
-                echo "else";
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
             ?>
         </header>

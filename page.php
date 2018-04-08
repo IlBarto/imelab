@@ -1,23 +1,14 @@
 <?php
 get_header(); ?>
 
-<div id="main-container">
+<div id="main-container" class="page">
 	<section id="content-container">
 		<?php
-		//loop dei post 
-			while(have_posts()): the_post();
-
-			//prendi il contenuto dei single
-			get_template_part('content', 'single');
-
-			//prendi i commenti
-			the_post_thumbnail();
-			//comments_template('',true);
-
-			// fine loop
+		if ( have_posts() ) :
+            while(have_posts()): the_post();
+			    get_template_part('template-parts/post/content', 'single');
 			endwhile;
-			?>
-
+        endif;?>
 	</section> <!-- main--container--end-->
 </div>
 

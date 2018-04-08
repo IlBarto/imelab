@@ -1069,6 +1069,7 @@ object {
 
 .post-wrapper .row {
 	margin: 0.75rem 0;
+	padding: 0.5rem;
 }
 
 .imelab-border-box {
@@ -1078,7 +1079,7 @@ object {
 	border-radius: 4px;
 }
 
-.imelab-border-box .container .row:not(:last-child) {
+.imelab-border-box .container .row:not(:last-of-type) {
 	border-bottom: 1px solid #ccc;
 }
 
@@ -1092,6 +1093,7 @@ object {
 
 .site-header {
 	position: relative;
+	margin-bottom: 1.5em;
 }
 
 #top-menu li {
