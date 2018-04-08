@@ -1,6 +1,5 @@
 <?php
 get_header() ?>
-<h2>single</h2>
 
 <div class="wrap">
     <div id="primary" class="content-area">
