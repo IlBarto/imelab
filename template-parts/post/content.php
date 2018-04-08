@@ -1,4 +1,3 @@
-<h2>content</h2>
 <?php
 $is_single = is_single();
 ?>

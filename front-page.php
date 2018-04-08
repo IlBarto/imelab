@@ -1,9 +1,6 @@
 
 <?php
 get_header(); ?>
-
-<h2>front-page</h2>
-
 <div id="main-container">
 	<section id="content-container">
 		<?php
