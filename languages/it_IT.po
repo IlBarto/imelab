@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-07 17:37+0200\n"
+"PO-Revision-Date: 2018-04-14 15:21+0200\n"
 "Language-Team: \n"
 "X-Generator: Poedit 2.0.4\n"
 "Last-Translator: \n"
@@ -108,11 +108,11 @@ msgstr ""
 
 #: template-parts/footer/copyright.php:3
 msgid "IMElab is a trademark of Andrea Fantin"
-msgstr "IMELAB è un marchio registrato di Andrea Fantin"
+msgstr "IMElab è un marchio registrato di Andrea Fantin"
 
 #: template-parts/footer/copyright.php:4
 msgid "IMElab brand is used under concession by Safelab SRL"
-msgstr "Il marchio IMELAB è usato per concessione di Safelab SRL"
+msgstr "IMElab è usato in concessione da Safelab SRL"
 
 #: template-parts/navigation/navigation-top.php:1
 msgid "Top Menu"

@@ -1083,6 +1083,21 @@ object {
 	border-bottom: 1px solid #ccc;
 }
 
+.homepage .row:not(:last-of-type) {
+	border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 1440px) {
+	.container {
+		max-width: 1368px;
+	}
+}
+
+.image-center {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
 
 /*
 ## Header
