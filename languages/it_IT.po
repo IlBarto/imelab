@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-14 15:21+0200\n"
+"PO-Revision-Date: 2018-04-16 22:41+0200\n"
 "Language-Team: \n"
 "X-Generator: Poedit 2.0.4\n"
 "Last-Translator: \n"
@@ -138,3 +138,33 @@ msgstr "Descrizione"
 #. Author of the plugin/theme
 msgid "Jacopo"
 msgstr ""
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Message"
+msgstr "Messaggio"
+
+msgid "AntiBot Check"
+msgstr "Controllo anti-bot"
+
+msgid "Submit"
+msgstr "Invia"
+
+msgid "AntiBot verification incorrect"
+msgstr "Verifica anti-bot non corretta"
+
+msgid "Please supply all information"
+msgstr "Compilare tutti i campi"
+
+msgid "E-mail Address Invalid"
+msgstr "Indirizzo e-mail non valido"
+
+msgid "Message was not sent. Try Again"
+msgstr "Il messaggio non è stato mandato. Riprovare"
+
+msgid "Thanks! Your message has been sent"
+msgstr "Grazie! Il tuo messaggio è stato inviato con successo"

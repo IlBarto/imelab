@@ -1099,6 +1099,25 @@ object {
 	align-items: center;
 }
 
+.hide {
+	display: none;
+}
+
+@-webkit-keyframes in {
+	0% { -webkit-transform: scale(0); opacity: 0; visibility: hidden;  }
+	100% { -webkit-transform: scale(1); opacity: 1; visibility: visible; }
+}
+
+@keyframes in {
+	0% { transform: scale(0); opacity: 0; visibility: hidden;  }
+	100% { transform: scale(1); opacity: 1; visibility: visible; }
+}
+
+#response.show {
+	-webkit-animation: in 700ms ease both;
+	animation: in 700ms ease both;
+}
+
 /*
 ## Header
 */

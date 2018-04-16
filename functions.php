@@ -147,3 +147,5 @@ $defaults= array(
 	);
 add_theme_support ('custom-header',$defaults);
 add_theme_support ('custom-background');
+
+require get_parent_theme_file_path( '/inc/customizer.php' );

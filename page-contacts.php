@@ -1,26 +1,18 @@
 <?php
 
-//response generation function
 $response = "";
 
-//function to generate response
 function my_contact_form_generate_response($type, $message){
-	
 	global $response;
-	
-	if($type == "success") {
-		$response = "<div class='success'>{$message}</div>";
-	} else {
-		$response = "<div class='error'>{$message}</div>";
-	}
+	$response = "<div id='response' class='alert alert-{$type} hide' role='alert'>{$message}</div>";
 }
 
 //response messages
-$not_human       = "Human verification incorrect.";
-$missing_content = "Please supply all information.";
-$email_invalid   = "Email Address Invalid.";
-$message_unsent  = "Message was not sent. Try Again.";
-$message_sent    = "Thanks! Your message has been sent.";
+$not_human       = esc_html( translate('AntiBot verification incorrect','imelab') );
+$missing_content = esc_html( translate('Please supply all information','imelab') );
+$email_invalid   = esc_html( translate('E-mail Address Invalid','imelab') );
+$message_unsent  = esc_html( translate('Message was not sent. Try Again','imelab') );
+$message_sent    = esc_html( translate('Thanks! Your message has been sent','imelab') );
 
 //user posted variables
 $name = $_POST['message_name'];
@@ -29,38 +21,34 @@ $message = $_POST['message_text'];
 $human = $_POST['message_human'];
 
 //php mailer variables
-$to = "barto.jacopo@gmail.com";//get_option('admin_email');
+$to = get_theme_mod('contact_form_mail');
 $subject = "Someone sent a message from ".get_bloginfo('name');
 $headers = 'From: '. $email . "\r\n" .
            'Reply-To: ' . $email . "\r\n";
 
 if(!$human == 0){
 	if($human != 2) {
-		my_contact_form_generate_response( "error", $not_human );
+		my_contact_form_generate_response( "danger", $not_human );
 	} else {
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			my_contact_form_generate_response( "error", $email_invalid );
+			my_contact_form_generate_response( "danger", $email_invalid );
 		} else {
 			if(empty($name) || empty($message)){
-				my_contact_form_generate_response("error", $missing_content);
+				my_contact_form_generate_response("danger", $missing_content);
 			}
 			else {
-				$sent = wp_mail($to, $subject, strip_tags($message),     $headers);
-				if($sent) {
+				if(wp_mail($to, $subject, strip_tags($message), $headers)) {
 					my_contact_form_generate_response( "success", $message_sent );
 				} else {
-					my_contact_form_generate_response("error", $message_unsent);
+					my_contact_form_generate_response("danger", $message_unsent);
 				}
 			}
 		}
-		
 	}
 } else if ($_POST['submitted']) {
-	my_contact_form_generate_response( "error", $missing_content );
+	my_contact_form_generate_response( "danger", $missing_content );
 }
-?>
 
-<?php
 get_header(); ?>
 
 <div id="main-container" class="page-contacts">
@@ -72,34 +60,48 @@ get_header(); ?>
 					<div class="contact-form col-md-12">
 						<?php the_content(); ?>
 						
-						<div id="respond">
+						<div>
 							<?php echo $response; ?>
 							<form action="<?php the_permalink(); ?>" method="post">
 								<div class="form-group">
-									<label for="message_name">Name</label>
-									<input type="text" name="message_name" class="form-control" value="<?php echo esc_attr($_POST['message_name']); ?>">
+									<label for="message_name"><?php esc_html_e('Name', 'imelab') ?></label>
+									<input id="message_name" type="text" name="message_name" class="form-control" value="<?php echo esc_attr($_POST['message_name']); ?>">
 								</div>
 								<div class="form-group">
-									<label for="message_email">Mail</label>
-									<input type="email" class="form-control" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>">
+									<label for="message_email"><?php esc_html_e('E-mail', 'imelab') ?></label>
+									<input id="message_email" type="email" class="form-control" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>">
 								</div>
 								<div class="form-group">
-									<label for="message_text">Message</label>
-									<textarea class="form-control" rows="3" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
+									<label for="message_text"><?php esc_html_e('Message', 'imelab') ?></label>
+									<textarea id="message_text" class="form-control" rows="3" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
 								</div>
+                                <div class="form-group form-check">
+                                    <input id="message_newsletter" type="checkbox" class="form-check-input" name="message_newsletter">
+                                    <label class="form-check-label" for="message_newsletter"><?php esc_html_e('Newsletter', 'imelab') ?></label>
+                                </div>
 								<div class="form-group">
-									<label for="message_human">Human Verification</label>
-									<input type="text" class="form-control" style="width: 60px;" name="message_human"> + 3 = 5
+									<label for="message_human" style="display: block;"><?php esc_html_e('AntiBot Check', 'imelab') ?></label>
+									<input id="message_human" type="text" class="form-control" style="display: inline-block; width: 60px;" name="message_human"> + 3 = 5
 								</div>
-								<button type="submit" class="btn btn-secondary">Submit</button>
+                                <input type="hidden" name="submitted" value="1">
+								<button type="submit" class="btn btn-secondary"><?php esc_html_e('Submit', 'imelab') ?></button>
 							</form>
 						</div>
 					
-					</div><!-- .entry-content -->
+					</div><!-- .contact-form -->
 				</article><!-- #post -->
 			<?php endwhile;
 		endif;?>
-	</section> <!-- main--container--end-->
+	</section> <!-- #content-container -->
 </div>
+
+<script type="text/javascript">
+    var response = document.getElementById('response');
+
+    if(response) {
+        response.className.replace('hide', 'show');
+        response.style.display = 'block';
+    }
+</script>
 
 <?php get_footer(); ?>

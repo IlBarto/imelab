@@ -137,3 +137,33 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Jacopo"
 msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "AntiBot Check"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "AntiBot verification incorrect"
+msgstr ""
+
+msgid "Please supply all information"
+msgstr ""
+
+msgid "E-mail Address Invalid"
+msgstr ""
+
+msgid "Message was not sent. Try Again"
+msgstr ""
+
+msgid "Thanks! Your message has been sent"
+msgstr ""
