@@ -16,5 +16,14 @@
         <?php
         the_excerpt(); ?>
         <a class="btn btn-outline-secondary btn-lg" href="<?php echo get_permalink(); ?>"><?php esc_html_e( 'Information', 'imelab' ); ?></a>
+       
+        <?php echo get_post_meta(get_the_ID(), 'reservable', true); ?>
+        
+        <?php if('true' == get_post_meta(get_the_ID(), 'reservable', true)) : ?>
+            <form id="reservation-form" class="hide" method="post" action="<?php echo get_page_link(get_page_by_title('Reserve')) ?>">
+                <input type="hidden" name="reservation_product" value="<?php the_title() ?>">
+            </form>
+            <button form="reservation-form" type="submit" class="btn btn-outline-secondary btn-lg"><?php esc_html_e( 'Reserve', 'imelab' ); ?></button>
+        <?php endif; ?>
     </div>
 </article>
