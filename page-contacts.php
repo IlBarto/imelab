@@ -3,8 +3,9 @@
 $response = "";
 
 function my_contact_form_generate_response($type, $message){
-	global $response;
+	global $response, $human_trial, $human_trials;
 	$response = "<div id='response' class='alert alert-{$type} hide' role='alert'>{$message}</div>";
+	$human_trial = $human_trials[rand(1,9)];
 }
 
 //response messages
@@ -26,8 +27,23 @@ $subject = "Someone sent a message from ".get_bloginfo('name');
 $headers = 'From: '. $email . "\r\n" .
            'Reply-To: ' . $email . "\r\n";
 
+$human_trials = array(
+        '',//null
+        ' + 2 = 3',//1
+        ' + 4 = 6',//2
+        ' - 1 = 2',//3
+        ' + 3 = 7',//4
+        ' + 5 = 10',//5
+        ' - 2 = 4',//6
+        ' - 6 = 1',//7
+        ' + 1 = 9',//8
+        ' - 5 = 4',//9
+);
+
+$human_trial = $_POST['human_trial'];
+
 if(!$human == 0){
-	if($human != 2) {
+	if($human != array_search($human_trial, $human_trials)) {
 		my_contact_form_generate_response( "danger", $not_human );
 	} else {
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -45,8 +61,12 @@ if(!$human == 0){
 			}
 		}
 	}
-} else if ($_POST['submitted']) {
-	my_contact_form_generate_response( "danger", $missing_content );
+} else{
+	if ($_POST['submitted']) {
+		my_contact_form_generate_response( "danger", $missing_content );
+	} else {
+	   $human_trial = $human_trials[rand(1,9)];
+    }
 }
 
 get_header(); ?>
@@ -81,8 +101,9 @@ get_header(); ?>
                                 </div>
 								<div class="form-group">
 									<label for="message_human" style="display: block;"><?php esc_html_e('AntiBot Check', 'imelab') ?></label>
-									<input id="message_human" type="text" class="form-control" style="display: inline-block; width: 60px;" name="message_human"> + 3 = 5
+									<input id="message_human" type="text" class="form-control" style="display: inline-block; width: 60px;" name="message_human"><?php echo $human_trial ?>
 								</div>
+                                <input type="hidden" name="human_trial" value="<?php echo esc_attr($human_trial) ?>">
                                 <input type="hidden" name="submitted" value="1">
 								<button type="submit" class="btn btn-secondary"><?php esc_html_e('Submit', 'imelab') ?></button>
 							</form>
