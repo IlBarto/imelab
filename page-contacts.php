@@ -8,6 +8,9 @@ function my_contact_form_generate_response($type, $message){
 	$human_trial = $human_trials[rand(1,9)];
 }
 
+//sql variables
+$product_options;
+
 //response messages
 $not_human       = esc_html( translate('AntiBot verification incorrect','imelab') );
 $missing_content = esc_html( translate('Please supply all information','imelab') );
@@ -20,10 +23,11 @@ $name = $_POST['message_name'];
 $email = $_POST['message_email'];
 $message = $_POST['message_text'];
 $human = $_POST['message_human'];
+$newsletter = $_POST['message_newsletter'];
 
 //php mailer variables
 $to = get_theme_mod('contact_form_mail');
-$subject = "Someone sent a message from ".get_bloginfo('name');
+$subject = "Qualcuno ha mandato un messaggio da ".get_bloginfo('name');
 $headers = 'From: '. $email . "\r\n" .
            'Reply-To: ' . $email . "\r\n";
 
@@ -53,6 +57,7 @@ if(!$human == 0){
 				my_contact_form_generate_response("danger", $missing_content);
 			}
 			else {
+			    $message .= "\nNewsletter: {$newsletter}";
 				if(wp_mail($to, $subject, strip_tags($message), $headers)) {
 					my_contact_form_generate_response( "success", $message_sent );
 				} else {
@@ -96,7 +101,7 @@ get_header(); ?>
 									<textarea id="message_text" class="form-control" rows="3" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
 								</div>
                                 <div class="form-group form-check">
-                                    <input id="message_newsletter" type="checkbox" class="form-check-input" name="message_newsletter">
+                                    <input id="message_newsletter" type="checkbox" class="form-check-input" name="message_newsletter" value="<?php echo esc_attr($_POST['message_newsletter']); ?>">
                                     <label class="form-check-label" for="message_newsletter"><?php esc_html_e('Newsletter', 'imelab') ?></label>
                                 </div>
 								<div class="form-group">

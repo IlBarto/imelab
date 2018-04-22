@@ -903,6 +903,10 @@ article > * {
 	margin: 10px 0;
 }
 
+article .btn {
+	margin-bottom: 0.5rem;
+}
+
 .sticky {
 	display: block;
 }
@@ -1224,6 +1228,10 @@ footer .wrap > * {
 
 	#menu-social-menu > li:nth-child(even) {
 		float: right;
+	}
+
+	.search-form {
+		margin-bottom: 5px;
 	}
 }
 

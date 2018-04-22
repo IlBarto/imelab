@@ -138,15 +138,19 @@ msgstr ""
 msgid "Jacopo"
 msgstr ""
 
+#. page-contacts.php:87
 msgid "Name"
 msgstr ""
 
+#. page-contacts.php:91
 msgid "E-mail"
 msgstr ""
 
+#. page-contacts.php:95
 msgid "Message"
 msgstr ""
 
+#. page-contacts.php:103
 msgid "AntiBot Check"
 msgstr ""
 
@@ -166,4 +170,43 @@ msgid "Message was not sent. Try Again"
 msgstr ""
 
 msgid "Thanks! Your message has been sent"
+msgstr ""
+
+msgid "Newsletter"
+msgstr ""
+
+msgid "Product"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "The product you're looking for doesn't exist"
+msgstr ""
+
+msgid "Visit this page by clicking the 'Reserve' button on the Projects page"
+msgstr ""
+
+msgid "Reserve"
+msgstr ""
+
+msgid "Contact Forms Options"
+msgstr ""
+
+msgid "Options for Contact Form and Reserve Form"
+msgstr ""
+
+msgid "Contact Form Mail"
+msgstr ""
+
+msgid "Insert the mail that will receive the Contact Form mails"
+msgstr ""
+
+msgid "Reserve Form Mail"
+msgstr ""
+
+msgid "Insert the mail that will receive the Reserve Form mails"
 msgstr ""

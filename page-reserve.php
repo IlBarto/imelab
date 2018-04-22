@@ -7,12 +7,12 @@ function my_reservation_form_generate_response($type, $message){
 	$human_trial = $human_trials[rand(1,9)];
 }
 
-$not_human      = esc_html( translate('AntiBot verification incorrect','imelab') );
-$email_invalid  = esc_html( translate('E-mail Address Invalid','imelab') );
-$missing_content = esc_html( translate('Please supply all information','imelab') );
-$message_unsent = esc_html( translate('Message was not sent. Try Again','imelab') );
-$message_sent   = esc_html( translate('Thanks! Your message has been sent','imelab') );
-$amount_invalid = esc_html( translate('Amount invalid', 'imelab') );
+$not_human          = esc_html( translate('AntiBot verification incorrect','imelab') );
+$email_invalid      = esc_html( translate('E-mail Address Invalid','imelab') );
+$missing_content    = esc_html( translate('Please supply all information','imelab') );
+$message_unsent     = esc_html( translate('Message was not sent. Try Again','imelab') );
+$message_sent       = esc_html( translate('Thanks! Your message has been sent','imelab') );
+$amount_invalid     = esc_html( translate('Amount invalid', 'imelab') );
 
 $human_trial = $_POST['reservation_human_trial'];
 
@@ -48,7 +48,7 @@ if(isset($_POST['reservation_product'])) {
 							$message .= "Quantità: ".$amount."\n";
 							$message .= $_POST['reservation_notes'];
 							
-							$to = get_theme_mod('contact_form_mail');
+							$to = get_theme_mod('reserve_form_mail');
 							$subject = "Qualcuno ha creato un ordine da ".get_bloginfo('name');
 							$headers = 'From: '. $email . "\r\n" .
 							           'Reply-To: ' . $email . "\r\n";

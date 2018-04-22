@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-16 22:41+0200\n"
+"PO-Revision-Date: 2018-04-22 15:29+0200\n"
 "Language-Team: \n"
 "X-Generator: Poedit 2.0.4\n"
 "Last-Translator: \n"
@@ -168,3 +168,42 @@ msgstr "Il messaggio non è stato mandato. Riprovare"
 
 msgid "Thanks! Your message has been sent"
 msgstr "Grazie! Il tuo messaggio è stato inviato con successo"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Product"
+msgstr "Prodotto"
+
+msgid "Amount"
+msgstr "Quantità"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "The product you're looking for doesn't exist"
+msgstr "Il prodotto che stai cercando non esiste"
+
+msgid "Visit this page by clicking the 'Reserve' button on the Projects page"
+msgstr "Visita questa pagina cliccando sul bottone \"Prenota\" nella pagina Projects"
+
+msgid "Reserve"
+msgstr "Prenota"
+
+msgid "Contact Forms Options"
+msgstr "Opzioni Forms di Contatto"
+
+msgid "Options for Contact Form and Reserve Form"
+msgstr "Opzioni per il form di Contatto e il form di Prenotazione"
+
+msgid "Contact Form Mail"
+msgstr "Mail per il form di Contatto"
+
+msgid "Insert the mail that will receive the Contact Form mails"
+msgstr "Inserisci l'indirizzo che riceverà la mail del form di contatto"
+
+msgid "Reserve Form Mail"
+msgstr "Mail per il form di Prenotazione"
+
+msgid "Insert the mail that will receive the Reserve Form mails"
+msgstr "Inserisci l'indirizzo che riceverà la mail del form di prenotazione"

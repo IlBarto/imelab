@@ -22,6 +22,23 @@
     </footer>
 </div><!-- #page -->
 
+<script type="text/javascript">
+    function removebr(list) {
+        for(var i = 0;i<list.length;i++) {
+            if(list.item(i).tagName == 'BR') {
+                list.item(i).parentNode.removeChild(list.item(i));
+                i--;//torno indietro di 1, avendo rimosso un elemento
+            } else if(list.item(i).children.length > 0) {
+                removebr(list.item(i).children);
+            }
+        }
+    }
+
+    var imagecenterlist = document.getElementsByClassName('image-center');
+    removebr(imagecenterlist);
+
+</script>
+
 <?php
 wp_footer(); ?>
 
