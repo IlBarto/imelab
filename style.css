@@ -1073,7 +1073,12 @@ object {
 
 .post-wrapper .row {
 	margin: 0.75rem 0;
-	padding: 0.5rem;
+	padding: 0.5rem 0;
+}
+
+.no-lateral-padding {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .imelab-border-box {
