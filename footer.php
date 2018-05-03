@@ -1,23 +1,18 @@
     </div><!-- #content -->
 
     <footer class="footer panel-footer site-footer">
-        <div class="wrap row">
+        <div class="wrap row justify-content-center align-items-center">
             <?php
             get_template_part('template-parts/footer/copyright');
 
-            if(has_nav_menu('social')) : ?>
-                <nav class="social-wrap col-md-3" role="navigation" aria-label="<?php _e( 'Footer Social Links Menu', 'imelab' ); ?>">
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'social',
-                        'menu_class'     => 'social-links-menu',
-                        'depth'          => 1,
-                    ) );
-                    ?>
-                </nav>
-            <?php endif;
-
-            ?>
+            if(has_nav_menu('social')) :
+                wp_nav_menu( array(
+                    'theme_location' => 'social',
+                    'menu_class'     => 'social-links-menu',
+                    'depth'          => 1,
+                    'container'      => '',
+                ) );
+            endif; ?>
         </div>
     </footer>
 </div><!-- #page -->

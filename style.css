@@ -1167,7 +1167,6 @@ footer {
 
 #menu-social-menu > li {
 	margin-top: 15px;
-	display: list-item;
 	list-style: none;
 }
 
@@ -1183,11 +1182,11 @@ footer .wrap > * {
 	float: right;
 }
 
-.social-wrap a {
+.social-links-menu a {
 	position: relative;
 }
 
-.social-wrap a:before {
+.social-links-menu a:before {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -1202,7 +1201,7 @@ footer .wrap > * {
 	transition: all 0.3s ease-in-out 0s;
 }
 
-.social-wrap a:hover:before {
+.social-links-menu a:hover:before {
 	visibility: visible;
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
