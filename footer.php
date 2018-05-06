@@ -1,19 +1,17 @@
     </div><!-- #content -->
 
-    <footer class="footer panel-footer site-footer">
-        <div class="wrap row justify-content-center align-items-center">
-            <?php
-            get_template_part('template-parts/footer/copyright');
+    <footer class="footer panel-footer site-footer wrap row justify-content-center align-items-center">
+        <?php
+        get_template_part('template-parts/footer/copyright');
 
-            if(has_nav_menu('social')) :
-                wp_nav_menu( array(
-                    'theme_location' => 'social',
-                    'menu_class'     => 'social-links-menu',
-                    'depth'          => 1,
-                    'container'      => '',
-                ) );
-            endif; ?>
-        </div>
+        if(has_nav_menu('social')) :
+            wp_nav_menu( array(
+                'theme_location' => 'social',
+                'menu_class'     => 'social-links-menu',
+                'depth'          => 1,
+                'container'      => '',
+            ) );
+        endif; ?>
     </footer>
 </div><!-- #page -->
 
