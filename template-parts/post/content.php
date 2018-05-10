@@ -30,11 +30,11 @@
                     <form id="reservation-form" class="hide" method="post" action="<?php echo get_page_link(get_page_by_title('Reserve')) ?>">
                         <input type="hidden" name="reservation_product" value="<?php the_title() ?>">
                     </form>
-                    <button form="reservation-form" type="submit" class="btn btn-outline-secondary btn-lg"><?php esc_html_e( 'Reserve', 'imelab' ); ?> - <?php echo $price."€"?></button>
+                    <button form="reservation-form" type="submit" class="btn btn-outline-secondary btn-lg"><?php esc_html_e( 'Reserve', 'imelab' ); ?><br><?php echo $price."€"?></button>
 
             <?php
                 elseif($d && $d->format($format) == $date) : ?>
-                    <button type="button" class="btn btn-outline-secondary btn-lg" disabled><?php printf(esc_html(translate('Available from %s', 'imelab' )), $date); ?></button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg" disabled><?php esc_html_e('Available from %s', 'imelab'); ?><br><?php echo $date ?></button>
             <?php
                 endif; ?>
             </div>

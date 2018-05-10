@@ -211,5 +211,5 @@ msgstr ""
 msgid "Insert the mail that will receive the Reserve Form mails"
 msgstr ""
 
-msgid "Available from %s"
+msgid "Available from"
 msgstr ""
