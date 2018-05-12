@@ -1220,6 +1220,15 @@ footer .wrap > * {
 	max-width: 500px;
 }
 
+#reservation_control_shipping:checked ~ #reservation_shipping {
+	display: block;
+}
+
+#reservation_shipping {
+	margin-left: -1.25rem;
+	display: none;
+}
+
 
 @media screen and (max-width: 48em) {
 
