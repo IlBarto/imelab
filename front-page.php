@@ -29,23 +29,26 @@ get_header(); ?>
 
     function typewriter()
     {
-        sContents =  ' ';
-        iRow = Math.max(0, iIndex-iScrollAt);
         var destination = document.getElementById("typedtext");
 
-        while ( iRow < iIndex ) {
-            sContents += aText[iRow++] + '<br />';
-        }
-        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-        if ( iTextPos++ == iArrLength ) {
-            iTextPos = 0;
-            iIndex++;
-            if ( iIndex != aText.length ) {
-                iArrLength = aText[iIndex].length;
-                setTimeout("typewriter()", 500);
+        if(destination) {
+            sContents =  ' ';
+            iRow = Math.max(0, iIndex-iScrollAt);
+
+            while ( iRow < iIndex ) {
+                sContents += aText[iRow++] + '<br />';
             }
-        } else {
-            setTimeout("typewriter()", iSpeed);
+            destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+            if ( iTextPos++ == iArrLength ) {
+                iTextPos = 0;
+                iIndex++;
+                if ( iIndex != aText.length ) {
+                    iArrLength = aText[iIndex].length;
+                    setTimeout("typewriter()", 500);
+                }
+            } else {
+                setTimeout("typewriter()", iSpeed);
+            }
         }
     }
     

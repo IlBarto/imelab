@@ -26,7 +26,7 @@
                 $format = 'd-m-Y';
                 $date = get_post_meta(get_the_ID(), 'reservation-date', true);
                 $d = DateTime::createFromFormat($format, $date);
-                if($price && is_float(floatval($price))) : ?>
+                if($price && floatval($price) != 0 && is_float(floatval($price))) : ?>
                     <form id="reservation-form" class="hide" method="post" action="<?php echo get_page_link(get_page_by_title('Reserve')) ?>">
                         <input type="hidden" name="reservation_product" value="<?php the_title() ?>">
                     </form>
@@ -34,7 +34,7 @@
 
             <?php
                 elseif($d && $d->format($format) == $date) : ?>
-                    <button type="button" class="btn btn-outline-secondary btn-lg" disabled><?php esc_html_e('Available from %s', 'imelab'); ?><br><?php echo $date ?></button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg" disabled><?php esc_html_e('Available from', 'imelab'); ?><br><?php echo $date ?></button>
             <?php
                 endif; ?>
             </div>
