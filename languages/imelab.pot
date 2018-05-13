@@ -213,3 +213,30 @@ msgstr ""
 
 msgid "Available from"
 msgstr ""
+
+msgid "Billing Information"
+msgstr ""
+
+msgid "Surname"
+msgstr ""
+
+msgid "VAT Number or National Insurance Number"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Zip Code"
+msgstr ""
+
+msgid "Shipping Information"
+msgstr ""
+
+msgid "Shipping address is different than billing"
+msgstr ""
