@@ -179,7 +179,7 @@ get_header(); ?>
                                         </div>
                                         <div class="form-group form-check">
                                             <input id="reservation_control_shipping" type="checkbox" class="form-check-input" name="reservation_control_shipping" value="<?php echo esc_attr($_POST['reservation_control_shipping']); ?>">
-                                            <label class="form-check-label" for="reservation_control_shipping"><?php esc_html_e('Shipping address is different than billing ', 'imelab') ?></label>
+                                            <label class="form-check-label" for="reservation_control_shipping"><?php esc_html_e('Shipping address is different than billing', 'imelab') ?></label>
                                             
                                             <div class="form-group" id="reservation_shipping">
                                                 <div class="form-group">

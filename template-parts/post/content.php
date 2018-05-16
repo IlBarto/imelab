@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('row is-not-single'); ?>>
     <?php
     if ( '' !== get_the_post_thumbnail() ) : ?>
-        <div class="post-thumbnail image-center col-md-4">
+        <div class="post-thumbnail col-md-4">
             <?php the_post_thumbnail(); ?>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
