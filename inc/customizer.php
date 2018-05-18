@@ -6,8 +6,26 @@ function imelab_customize_register($wp_customize) {
         'title'       => __( 'Contact Forms Options', 'imelab' ),
         'description' => __( 'Options for Contact Form and Reserve Form', 'imelab' ),
     ) );
-
-        $wp_customize->add_section( 'contact_form_mail', array(
+	
+		$wp_customize->add_section( 'message_from_address', array(
+			'title'           => __( 'Message From Address', 'imelab' ),
+			'panel'           => 'options_panel',
+		) );
+		
+			$wp_customize->add_setting( 'message_from_address', array(
+				'default'           => 'barto.jacopo@gmail.com',
+				'sanitize_callback' => 'imelab_sanitize_contact_form_mail',
+				'transport'         => 'postMessage',
+			) );
+			
+				$wp_customize->add_control( 'message_from_address', array(
+					'label'       => __( 'Message From Address', 'imelab' ),
+					'section'     => 'message_from_address',
+					'type'        => 'email',
+					'description' => __( 'Insert the address that will send the form mails', 'imelab' ),
+				) );
+	
+		$wp_customize->add_section( 'contact_form_mail', array(
             'title'           => __( 'Contact Form Mail', 'imelab' ),
             'panel'           => 'options_panel',
         ) );

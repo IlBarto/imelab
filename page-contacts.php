@@ -27,8 +27,9 @@ $newsletter = $_POST['message_newsletter'];
 
 //php mailer variables
 $to = get_theme_mod('contact_form_mail');
+$from = get_theme_mod('message_from_address');
 $subject = "Qualcuno ha mandato un messaggio da ".get_bloginfo('name');
-$headers = 'From: '. $email . "\r\n" .
+$headers = "From: {$from}\r\n" .
            'Reply-To: ' . $email . "\r\n";
 
 $human_trials = array(
@@ -57,8 +58,12 @@ if(!$human == 0){
 				my_contact_form_generate_response("danger", $missing_content);
 			}
 			else {
-			    $message .= "\nNewsletter: {$newsletter}";
-				if(wp_mail($to, $subject, strip_tags($message), $headers)) {
+			    $new_message = "Name: {$name}\nMessage: {$message}\n";
+			    
+			    if(!is_null($newsletter)) {
+				    $new_message .= "\nVuole iscriversi alla newsletter";
+                }
+				if(wp_mail($to, $subject, strip_tags($new_message), $headers)) {
 					my_contact_form_generate_response( "success", $message_sent );
 				} else {
 					my_contact_form_generate_response("danger", $message_unsent);

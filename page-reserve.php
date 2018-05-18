@@ -57,8 +57,8 @@ if(isset($_POST['reservation_product'])) {
 						    if(var_validation('reservation_name', 'reservation_surname', 'reservation_cf', 'reservation_address', 'reservation_city', 'reservation_cap', 'reservation_prov')) {
 							    $message = "Prodotto: ".$product."\n";
 							    $message .= "Quantità: ".$amount."\n";
-							    $message .= "Note\n".$_POST['reservation_notes'];
-							    $message .= "\nInformazioni di fatturazione\n";
+							    $message .= "\nNote\n".$_POST['reservation_notes'];
+							    $message .= "\n\nInformazioni di fatturazione\n";
 							    $message .= "Nome: ".$_POST['reservation_name']."\n";
 							    $message .= "Cognome: ".$_POST['reservation_surname']."\n";
 							    $message .= "CF/P.Iva: ".$_POST['reservation_cf']."\n";
@@ -71,8 +71,9 @@ if(isset($_POST['reservation_product'])) {
 							    }
 							
 							    $to = get_theme_mod('reserve_form_mail');
+							    $from = get_theme_mod('message_from_address');
 							    $subject = "Qualcuno ha creato un ordine da ".get_bloginfo('name');
-							    $headers = 'From: '. $email . "\r\n" .
+							    $headers = 'From: '. $from . "\r\n" .
 							               'Reply-To: ' . $email . "\r\n";
 							    if(wp_mail($to, $subject, strip_tags($message), $headers)) {
 								    my_reservation_form_generate_response("success", $message_sent);
