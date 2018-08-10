@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-05-13 10:06+0200\n"
+"PO-Revision-Date: 2018-08-10 15:48+0200\n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: it_IT\n"
@@ -237,3 +237,21 @@ msgstr "Informazioni di spedizione"
 
 msgid "Shipping address is different than billing"
 msgstr "L'indirizzo di spedizione è diverso da quello di fatturazione"
+
+msgid "You have to configure the Analytics in the theme options"
+msgstr "Devi configurare gli Analytics nelle opzioni del tema"
+
+msgid "Analytics Code"
+msgstr "Codice Analytics"
+
+msgid "Insert the Analytics monitoring code"
+msgstr "Inserisci il codice di monitoraggio di Analytics"
+
+msgid "Analytics Monitoring Code"
+msgstr "Codice di monitoraggio di Analytics"
+
+msgid "Google Analytics Options"
+msgstr "Opzioni Google Analytics"
+
+msgid "Options for Google Analytics"
+msgstr "Opzioni per Google Analytics"

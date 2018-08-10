@@ -1,6 +1,13 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
+    
+    <?php
+    $analytics = get_theme_mod('analytics_code', '');
+    
+    echo $analytics;
+    ?>
+    
     <meta charset="<?php bloginfo( 'charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -240,3 +240,21 @@ msgstr ""
 
 msgid "Shipping address is different than billing"
 msgstr ""
+
+msgid "You have to configure the Analytics in the theme options"
+msgstr ""
+
+msgid "Analytics Code"
+msgstr ""
+
+msgid "Insert the Analytics monitoring code"
+msgstr ""
+
+msgid "Analytics Monitoring Code"
+msgstr ""
+
+msgid "Google Analytics Options"
+msgstr ""
+
+msgid "Options for Google Analytics"
+msgstr ""

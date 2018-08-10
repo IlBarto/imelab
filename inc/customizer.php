@@ -60,6 +60,29 @@ function imelab_customize_register($wp_customize) {
                     'type'        => 'email',
                     'description' => __( 'Insert the mail that will receive the Reserve Form mails', 'imelab' ),
                 ) );
+	
+	
+	$wp_customize->add_panel( 'analytics_panel', array(
+		'title'       => __( 'Google Analytics Options', 'imelab' ),
+		'description' => __( 'Options for Google Analytics', 'imelab' ),
+	) );
+	
+		$wp_customize->add_section( 'analytics_code', array(
+			'title'           => __( 'Analytics Monitoring Code', 'imelab' ),
+			'panel'           => 'analytics_panel',
+		) );
+	
+			$wp_customize->add_setting( 'analytics_code', array(
+				'default'           => '',
+				'transport'         => 'postMessage',
+			) );
+			
+				$wp_customize->add_control( 'analytics_code', array(
+					'label'       => __( 'Analytics Code', 'imelab' ),
+					'section'     => 'analytics_code',
+					'description' => __( 'Insert the Analytics monitoring code', 'imelab' ),
+					'type'        => 'textarea',
+				) );
 }
 add_action( 'customize_register', 'imelab_customize_register' );
 

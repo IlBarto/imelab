@@ -148,4 +148,35 @@ $defaults= array(
 add_theme_support ('custom-header',$defaults);
 add_theme_support ('custom-background');
 
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function example_add_dashboard_widgets() {
+	
+	wp_add_dashboard_widget(
+		'imelab_theme_analytics_dashboard',         // Widget slug.
+		'Google Analytics Dashboard Widget',         // Title.
+		'imelab_analytics_dashboard_widget_function' // Display function.
+	);
+}
+add_action( 'wp_dashboard_setup', 'example_add_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function imelab_analytics_dashboard_widget_function() {
+	$mods = get_theme_mods();
+	
+	if (!isset($mods['analytics_code'])) {
+		esc_html_e('You have to configure the Analytics in the theme options', 'imelab');
+	} else {
+		// Display whatever it is you want to show.
+		echo "Hello World, I'm a great Dashboard Widget";
+	}
+}
+
+
 require get_parent_theme_file_path( '/inc/customizer.php' );
