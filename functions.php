@@ -173,8 +173,7 @@ function imelab_analytics_dashboard_widget_function() {
 	if (!isset($mods['analytics_code'])) {
 		esc_html_e('You have to configure the Analytics in the theme options', 'imelab');
 	} else {
-		// Display whatever it is you want to show.
-		echo "Hello World, I'm a great Dashboard Widget";
+		esc_html_e('Analytics configured. New features coming soon...', 'imelab');
 	}
 }
 
