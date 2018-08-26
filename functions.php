@@ -112,7 +112,7 @@ function nav_menu_custom_wrapper() {
     $wrap  = '<ul id="%1$s" class="%2$s">';
     $wrap .= '%3$s';
 
-    $wrap .= '<li class="menu search-form">';
+    $wrap .= '<li class="menu search-form" style="float: right;">';
     $wrap .= get_search_form(false);
     $wrap .= '</li></ul>';
     return $wrap;
