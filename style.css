@@ -720,6 +720,15 @@ textarea {
 	display: block;
 }
 
+
+#top-menu:after {
+	content: ".";
+	visibility: hidden;
+	clear: both;
+	height: 0;
+	display: block;
+}
+
 .menu-toggle:hover,
 .menu-toggle:focus {
 	background-color: transparent;
