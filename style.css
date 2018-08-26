@@ -1281,7 +1281,7 @@ footer .wrap > * {
 	}
 
 	.navigation-top .wrap {
-		max-width: 1000px;
+		max-width: 1368px;
 		/* The font size is 14px here and we need 50px padding in ems */
 		padding: 0.75em 3.4166666666667em;
 	}
@@ -1290,7 +1290,9 @@ footer .wrap > * {
 		margin-left: -1.25em;
 	}
 
-
+	.menu.search-form {
+		float: right;
+	}
 
 	/*Main Navigation*/
 
