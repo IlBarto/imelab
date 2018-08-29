@@ -1,17 +1,23 @@
     </div><!-- #content -->
 
-    <footer role="contentinfo" class="footer panel-footer site-footer wrap row justify-content-center align-items-center">
+    <footer role="contentinfo" class="footer site-footer wrap row justify-content-center align-items-center">
+        <div>
         <?php
         get_template_part('template-parts/footer/copyright');
 
         if(has_nav_menu('social')) :
-            wp_nav_menu( array(
-                'theme_location' => 'social',
-                'menu_class'     => 'social-links-menu',
-                'depth'          => 1,
-                'container'      => '',
-            ) );
+            $menuParam = array(
+	            'theme_location'=> 'social',
+	            'menu_class'    => 'social-links-menu',
+	            'depth'         => 1,
+	            'container'     => '',
+	            'items-wrap'    => '%3$s',
+	            'echo'          => false,
+            );
+
+            echo "<p>".strip_tags(wp_nav_menu($menuParam), '<a>')."</p";
         endif; ?>
+        </div>
     </footer>
 </div><!-- #page -->
 
