@@ -7,56 +7,56 @@ function imelab_customize_register($wp_customize) {
         'description' => __( 'Options for Contact Form and Reserve Form', 'imelab' ),
     ) );
 	
-		$wp_customize->add_section( 'message_from_address', array(
+		$wp_customize->add_section( 'imelab_message_from_address', array(
 			'title'           => __( 'Message From Address', 'imelab' ),
 			'panel'           => 'options_panel',
 		) );
 		
-			$wp_customize->add_setting( 'message_from_address', array(
+			$wp_customize->add_setting( 'imelab_message_from_address', array(
 				'default'           => 'barto.jacopo@gmail.com',
 				'sanitize_callback' => 'imelab_sanitize_contact_form_mail',
 				'transport'         => 'postMessage',
 			) );
 			
-				$wp_customize->add_control( 'message_from_address', array(
+				$wp_customize->add_control( 'imelab_message_from_address', array(
 					'label'       => __( 'Message From Address', 'imelab' ),
-					'section'     => 'message_from_address',
+					'section'     => 'imelab_message_from_address',
 					'type'        => 'email',
 					'description' => __( 'Insert the address that will send the form mails', 'imelab' ),
 				) );
 	
-		$wp_customize->add_section( 'contact_form_mail', array(
+		$wp_customize->add_section( 'imelab_contact_form_mail', array(
             'title'           => __( 'Contact Form Mail', 'imelab' ),
             'panel'           => 'options_panel',
         ) );
 
-            $wp_customize->add_setting( 'contact_form_mail', array(
+            $wp_customize->add_setting( 'imelab_contact_form_mail', array(
                 'default'           => 'barto.jacopo@gmail.com',
                 'sanitize_callback' => 'imelab_sanitize_contact_form_mail',
                 'transport'         => 'postMessage',
             ) );
 
-                $wp_customize->add_control( 'contact_form_mail', array(
+                $wp_customize->add_control( 'imelab_contact_form_mail', array(
                     'label'       => __( 'Contact Form Mail', 'imelab' ),
-                    'section'     => 'contact_form_mail',
+                    'section'     => 'imelab_contact_form_mail',
                     'type'        => 'email',
                     'description' => __( 'Insert the mail that will receive the Contact Form mails', 'imelab' ),
                 ) );
 
-        $wp_customize->add_section( 'reserve_form_mail', array(
+        $wp_customize->add_section( 'imelab_reserve_form_mail', array(
             'title'           => __( 'Reserve Form Mail', 'imelab' ),
             'panel'           => 'options_panel',
         ) );
 
-            $wp_customize->add_setting( 'reserve_form_mail', array(
+            $wp_customize->add_setting( 'imelab_reserve_form_mail', array(
                 'default'           => 'barto.jacopo@gmail.com',
                 'sanitize_callback' => 'imelab_sanitize_contact_form_mail',
                 'transport'         => 'postMessage',
             ) );
 
-                $wp_customize->add_control( 'reserve_form_mail', array(
+                $wp_customize->add_control( 'imelab_reserve_form_mail', array(
                     'label'       => __( 'Reserve Form Mail', 'imelab' ),
-                    'section'     => 'reserve_form_mail',
+                    'section'     => 'imelab_reserve_form_mail',
                     'type'        => 'email',
                     'description' => __( 'Insert the mail that will receive the Reserve Form mails', 'imelab' ),
                 ) );
@@ -67,19 +67,19 @@ function imelab_customize_register($wp_customize) {
 		'description' => __( 'Options for Google Analytics', 'imelab' ),
 	) );
 	
-		$wp_customize->add_section( 'analytics_code', array(
+		$wp_customize->add_section( 'imelab_analytics_code', array(
 			'title'           => __( 'Analytics Monitoring Code', 'imelab' ),
 			'panel'           => 'analytics_panel',
 		) );
 	
-			$wp_customize->add_setting( 'analytics_code', array(
+			$wp_customize->add_setting( 'imelab_analytics_code', array(
 				'default'           => '',
 				'transport'         => 'postMessage',
 			) );
 			
-				$wp_customize->add_control( 'analytics_code', array(
+				$wp_customize->add_control( 'imelab_analytics_code', array(
 					'label'       => __( 'Analytics Code', 'imelab' ),
-					'section'     => 'analytics_code',
+					'section'     => 'imelab_analytics_code',
 					'description' => __( 'Insert the Analytics monitoring code', 'imelab' ),
 					'type'        => 'textarea',
 				) );

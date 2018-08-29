@@ -154,27 +154,44 @@ add_theme_support ('custom-background');
  *
  * This function is hooked into the 'wp_dashboard_setup' action below.
  */
-function example_add_dashboard_widgets() {
+function imelab_add_dashboard_widgets() {
 	
 	wp_add_dashboard_widget(
 		'imelab_theme_analytics_dashboard',         // Widget slug.
-		'Google Analytics Dashboard Widget',         // Title.
-		'imelab_analytics_dashboard_widget_function' // Display function.
+		'Imelab Theme Setup Widget',         // Title.
+		'imelab_setup_dashboard_widget_function' // Display function.
 	);
 }
-add_action( 'wp_dashboard_setup', 'example_add_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'imelab_add_dashboard_widgets' );
 
 /**
  * Create the function to output the contents of our Dashboard Widget.
  */
-function imelab_analytics_dashboard_widget_function() {
+function imelab_setup_dashboard_widget_function() {
 	$mods = get_theme_mods();
 	
-	if (!isset($mods['analytics_code'])) {
-		esc_html_e('You have to configure the Analytics in the theme options', 'imelab');
-	} else {
-		esc_html_e('Analytics configured. New features coming soon...', 'imelab');
+	$default = 'barto.jacopo@gmail.com';
+	
+	if (!isset($mods['imelab_reserve_form_mail']) || 0 === strcmp($mods['imelab_reserve_form_mail'], $default)) {
+		echo "<p>";
+		esc_html_e('You have to configure the mail for the reservation form in theme options', 'imelab');
 	}
+	
+	if (!isset($mods['imelab_contact_form_mail']) || 0 === strcmp($mods['imelab_contact_form_mail'], $default)) {
+		echo "<p>";
+		esc_html_e('You have to configure the mail for the contact form in theme options', 'imelab');
+	}
+	
+	if (!isset($mods['imelab_message_from_address']) || 0 === strcmp($mods['imelab_message_from_address'], $default)) {
+		echo "<p>";
+		esc_html_e('You have to configure the address that will send the form mails', 'imelab');
+	}
+	
+	if (!isset($mods['imelab_analytics_code']) || ($mods['imelab_analytics_code'] === "")) {
+		echo "<p>";
+		esc_html_e('You have to configure the Analytics in theme options', 'imelab');
+	}
+	
 }
 
 

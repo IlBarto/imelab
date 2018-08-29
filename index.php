@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 <div id="main-container">
-    <section id="content-container" class="container">
+    <section id="content-container" style="padding-right: 0; padding-left: 0;">
         <?php
         if ( have_posts() ) :
             while ( have_posts() ) : the_post();

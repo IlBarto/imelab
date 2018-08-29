@@ -3,7 +3,7 @@
 <head>
     
     <?php
-    $analytics = get_theme_mod('analytics_code', '');
+    $analytics = get_theme_mod('imelab_analytics_code', '');
     
     echo $analytics;
     ?>

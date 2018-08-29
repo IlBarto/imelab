@@ -70,8 +70,8 @@ if(isset($_POST['reservation_product'])) {
 								    $message .= "\nIndirizzo di spedizione: ".$_POST['reservation_address'].", ".$_POST['reservation_city'].", ".$_POST['reservation_cap']." ".$_POST['reservation_prov']."\n";
 							    }
 							
-							    $to = get_theme_mod('reserve_form_mail');
-							    $from = get_theme_mod('message_from_address');
+							    $to = get_theme_mod('imelab_reserve_form_mail');
+							    $from = get_theme_mod('imelab_message_from_address');
 							    $subject = "Qualcuno ha creato un ordine da ".get_bloginfo('name');
 							    $headers = 'From: '. $from . "\r\n" .
 							               'Reply-To: ' . $email . "\r\n";

@@ -1,6 +1,6 @@
     </div><!-- #content -->
 
-    <footer class="footer panel-footer site-footer wrap row justify-content-center align-items-center">
+    <footer role="contentinfo" class="footer panel-footer site-footer wrap row justify-content-center align-items-center">
         <?php
         get_template_part('template-parts/footer/copyright');
 

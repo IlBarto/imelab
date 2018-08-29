@@ -258,3 +258,12 @@ msgstr ""
 
 msgid "Options for Google Analytics"
 msgstr ""
+
+msgid "You have to configure the mail for the reservation form in theme options"
+msgstr ""
+
+msgid "You have to configure the mail for the contact form in theme options"
+msgstr ""
+
+msgid "You have to configure the address that will send the form mails"
+msgstr ""

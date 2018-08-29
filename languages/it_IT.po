@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-10 15:48+0200\n"
+"PO-Revision-Date: 2018-08-29 11:32+0200\n"
 "Language-Team: \n"
 "X-Generator: Poedit 1.8.7.1\n"
 "Last-Translator: \n"
@@ -255,3 +255,12 @@ msgstr "Opzioni Google Analytics"
 
 msgid "Options for Google Analytics"
 msgstr "Opzioni per Google Analytics"
+
+msgid "You have to configure the mail for the reservation form in theme options"
+msgstr "Devi configurare la mail per il form di prenotazione nelle opzioni del tema"
+
+msgid "You have to configure the mail for the contact form in theme options"
+msgstr "Devi configurare la mail per il form di contatto nelle opzioni del tema"
+
+msgid "You have to configure the address that will send the form mails"
+msgstr "Devi configurare l'indirizzo che manderà le mail dei form"
