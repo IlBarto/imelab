@@ -169,29 +169,32 @@ add_action( 'wp_dashboard_setup', 'imelab_add_dashboard_widgets' );
  */
 function imelab_setup_dashboard_widget_function() {
 	$mods = get_theme_mods();
+	$domain = "imelab";
+	$default = "barto.jacopo@gmail.com";
 	
-	$default = 'barto.jacopo@gmail.com';
+	$str = "";
 	
 	if (!isset($mods['imelab_reserve_form_mail']) || 0 === strcmp($mods['imelab_reserve_form_mail'], $default)) {
-		echo "<p>";
-		esc_html_e('You have to configure the mail for the reservation form in theme options', 'imelab');
+		$str .= "<p>".esc_html( translate( 'You have to configure the mail for the reservation form in theme options', $domain ) )."</p>";
 	}
 	
 	if (!isset($mods['imelab_contact_form_mail']) || 0 === strcmp($mods['imelab_contact_form_mail'], $default)) {
-		echo "<p>";
-		esc_html_e('You have to configure the mail for the contact form in theme options', 'imelab');
+		$str .= "<p>".esc_html( translate( 'You have to configure the mail for the contact form in theme options', $domain ) )."</p>";
 	}
 	
 	if (!isset($mods['imelab_message_from_address']) || 0 === strcmp($mods['imelab_message_from_address'], $default)) {
-		echo "<p>";
-		esc_html_e('You have to configure the address that will send the form mails', 'imelab');
+		$str .= "<p>".esc_html( translate( 'You have to configure the address that will send the form mails', $domain ) )."</p>";
 	}
 	
 	if (!isset($mods['imelab_analytics_code']) || ($mods['imelab_analytics_code'] === "")) {
-		echo "<p>";
-		esc_html_e('You have to configure the Analytics in theme options', 'imelab');
+		$str .= "<p>".esc_html( translate( 'You have to configure the Analytics in theme options', $domain ) )."</p>";
 	}
 	
+	if(empty($str)) {
+		esc_html_e('Everything is fine. Thanks you for using this theme!', $domain);
+	} else {
+		echo $str;
+	}
 }
 
 
