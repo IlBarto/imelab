@@ -14,8 +14,10 @@
 	            'items-wrap'    => '%3$s',
 	            'echo'          => false,
             );
-
-            echo "<p>".strip_tags(wp_nav_menu($menuParam), '<a>')."</p";
+        
+	        $socialMenu = str_replace(array('<li', '</li'), array('<i','</i'), wp_nav_menu($menuParam));
+            
+            echo "<p class='social-links-menu'>".strip_tags($socialMenu, '<a><i>')."</p";
         endif; ?>
         </div>
     </footer>
