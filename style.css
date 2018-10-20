@@ -1086,6 +1086,11 @@ object {
 	padding: 0.5rem 0;
 }
 
+.post-wrapper.container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .no-lateral-padding {
 	padding-right: 0;
 	padding-left: 0;
